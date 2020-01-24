@@ -19,7 +19,7 @@ class CreateEventController: UIViewController {
   @IBOutlet weak var datePicker: UIDatePicker!
   @IBOutlet weak var eventButton: UIButton!
   
-  public var event: Event? 
+  public var event: Event?
   
   // private for setting or changing you can only change it here just to look
   // public for getting and reading
@@ -33,6 +33,14 @@ class CreateEventController: UIViewController {
         
     updateUI()
   }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        //you can put call save function here so when the view disappears it will save automatically
+    }
    //it changes the UI so that the button says update event and not create event
   private func updateUI() {
     if let event = event {//coming form an existing event didSelectRowAt

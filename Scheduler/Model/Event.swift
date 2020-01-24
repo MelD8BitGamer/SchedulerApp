@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Event: Codable & Equatable {
+struct Event: Codable & Equatable { //the event can now be compared for item equality
   let identifier = UUID().uuidString
   var date: Date
   var name: String
